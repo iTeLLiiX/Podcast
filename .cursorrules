@@ -1,0 +1,495 @@
+# Podcast-Lernplattform - Cursor Rules
+
+## PROJEKT-ÜBERSICHT
+- **Ziel**: Moderne, hochwertige Webseite für Lern-Podcasts mit Upload-Funktionalität
+- **Tech-Stack**: React + TypeScript, Next.js (für Vercel Deployment)
+- **Deployment**: Vercel (automatisches Deployment)
+- **Design**: Premium, modern, minimalistisch, keine Standard-Emojis
+- **Sprache**: Deutsch (UI, Texte, Kommentare)
+- **Erklärungen**: Alle Erklärungen NUR im Chat, keine extra Dokumentationsdateien
+
+## DESIGN-PRINZIPIEN
+
+### Visuell
+- **Modern & Premium**: Clean Design, viel Whitespace, klare Typografie
+- **Keine Standard-Emojis**: Nur hochwertige Icons/SVG, keine 😊😂🔥 etc.
+- **Farbpalette**: Professionell, ruhig, lernfördernd
+- **Responsive**: Mobile-First Ansatz
+- **Accessibility**: Gute Kontraste, klare Struktur
+
+### UX/UI
+- **Navigation**: Intuitiv, klar strukturiert
+- **Podcast-Player**: Prominent, modern, funktional
+- **Kategorien**: Übersichtlich nach Lernthemen organisiert
+- **Suche**: Schnell, präzise
+- **Playlists**: Eigene Sammlungen erstellen
+
+## DESIGN-EFFEKTE (MÜSSEN IMMER EINGEBAUT WERDEN)
+
+### Pflicht-Effekte für jede Seite
+1. **Anti Design** - Unkonventionelle, experimentelle Layouts, die Aufmerksamkeit erregen
+2. **Experimental Navigation** - Kreative, ungewöhnliche Navigationskonzepte (z.B. 3D-Menü, Floating Nav)
+3. **Scrolling Design** - Parallax, Scroll-Animationen, Scroll-gesteuerte Effekte
+4. **Macro Animations** - Große, auffällige Animationen bei Interaktionen
+5. **Chatbot Design** - Integrierter Chatbot (z.B. für Hilfe, Navigation)
+6. **Smart Videos** - Video-Hintergründe, Video-Integration mit Overlays
+7. **Custom Illustrations** - Eigene, einzigartige Illustrationen (keine Stock-Grafiken)
+8. **Full Screen Headers** - Hero-Sections die den gesamten Viewport nutzen
+9. **Bento Grid - Bento UI** - Moderne Grid-Layouts im Bento-Stil (verschiedene Größen)
+10. **Expressive Typography** - Große, ausdrucksstarke Schriftarten, animierte Texte
+11. **Color Trends** - Moderne Farbtrends (Gradients, Neon, Pastell, etc.)
+12. **Brutalism** - Mutige, rohe Design-Elemente (starke Kontraste, klare Linien)
+13. **Micro Interactions** - Kleine Animationen bei jedem Klick, Hover, Scroll
+14. **Negative Space - White Space** - Viel Whitespace für Fokus und Klarheit
+15. **Grid Design** - Strukturierte Grid-Layouts für Content-Organisation
+16. **3D Websites** - 3D-Elemente, 3D-Transformationen, WebGL-Effekte
+17. **Blending Images and Graphics** - Bilder und Grafiken nahtlos verschmelzen
+18. **Dark mode and Light Mode** - Vollständiger Dark/Light Mode Toggle mit Smooth Transitions
+
+### Implementierungs-Regeln
+- **Jede Seite** muss mindestens 5-8 dieser Effekte kombinieren
+- **Homepage** muss alle 18 Effekte intelligent integrieren
+- **Effekte müssen funktional sein**, nicht nur dekorativ
+- **Performance**: Effekte müssen optimiert sein (keine Laggs)
+- **Accessibility**: Effekte dürfen Barrierefreiheit nicht beeinträchtigen
+
+## STRUKTUR & FEATURES
+
+### Hauptbereiche
+1. **Homepage**
+   - Hero-Section mit Featured Podcasts
+   - Neueste Episoden
+   - Beliebte Kategorien
+   - Schnellzugriff auf Player
+
+2. **Podcast-Übersicht**
+   - Alle Podcasts nach Kategorien
+   - Filter & Sortierung
+   - Suchfunktion
+   - Grid/List-Ansicht
+
+3. **Podcast-Detailseite**
+   - Episodenliste
+   - Beschreibung & Metadaten
+   - Abonnieren-Funktion
+   - Social Sharing
+
+4. **Player**
+   - Sticky/Floating Player (bleibt beim Scrollen sichtbar)
+   - Playlist-Funktion
+   - Geschwindigkeitskontrolle (0.5x - 2.0x)
+   - Kapitel-Navigation (falls vorhanden)
+   - Progress-Tracking (Hörfortschritt speichern)
+
+5. **Kategorien**
+   - Alle Lernthemen übersichtlich
+   - Filter nach Thema (z.B. C#, SQL, Netzwerk, BWL, etc.)
+
+6. **Upload-Bereich** (WICHTIG)
+   - Admin-Interface zum Hochladen von Podcasts
+   - Upload von Audio-Dateien (MP3, OGG)
+   - Upload von Cover-Bildern
+   - Metadaten-Eingabe (Titel, Beschreibung, Kategorie, etc.)
+   - Episoden-Verwaltung (hinzufügen, bearbeiten, löschen)
+   - Daten werden in Vercel Blob Storage oder ähnlichem gespeichert
+
+7. **Profil/Account** (optional)
+   - Favoriten
+   - Eigene Playlists
+   - Hörfortschritt
+   - Abonnements
+
+## TECHNISCHE ANFORDERUNGEN
+
+### Code-Standards
+- **Next.js**: App Router (für Vercel optimiert)
+- **TypeScript**: Strikte Typisierung
+- **React Hooks**: Moderne Patterns
+- **Component-Struktur**: Flach, keine unnötigen Subfolders
+- **Styling**: Tailwind CSS (modern, maintainable, Vercel-optimiert)
+- **State Management**: Context API oder Zustand (je nach Komplexität)
+- **API Routes**: Next.js API Routes für Backend-Logik (Upload, Datenverwaltung)
+
+### Performance
+- **Lazy Loading**: Podcasts & Episoden
+- **Image Optimization**: WebP, responsive images
+- **Audio**: Streaming-optimiert, Preload-Strategien
+- **SEO**: Meta-Tags, strukturierte Daten
+
+### Audio-Handling
+- **Player**: Custom Player mit HTML5 Audio API
+- **Formate**: MP3, OGG Support
+- **Progress**: Speichern des Hörfortschritts (localStorage oder API)
+- **Streaming**: Optimiert für große Audio-Dateien
+- **Offline**: Service Worker für Offline-Hören (optional)
+
+### Upload & Storage
+- **Vercel Blob Storage**: Für Audio-Dateien und Bilder
+- **Upload-API**: Next.js API Route für sicheren Upload
+- **Validierung**: Dateityp, Größe, Format-Prüfung
+- **Metadaten**: JSON-basierte Speicherung (Vercel KV oder ähnlich)
+- **Admin-Auth**: Einfache Authentifizierung für Upload-Bereich
+
+## DATEI-STRUKTUR (Next.js App Router)
+
+```
+podcast/
+├── .cursorrules (diese Datei)
+├── package.json
+├── tsconfig.json
+├── next.config.js
+├── vercel.json (für Deployment-Konfiguration)
+├── public/
+│   └── (statische Assets)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx (Homepage)
+│   │   ├── podcast/
+│   │   │   ├── [id]/
+│   │   │   │   └── page.tsx (Podcast-Detail)
+│   │   │   └── page.tsx (Übersicht)
+│   │   ├── kategorien/
+│   │   │   └── page.tsx
+│   │   ├── suche/
+│   │   │   └── page.tsx
+│   │   ├── upload/
+│   │   │   └── page.tsx (Admin-Upload)
+│   │   └── api/
+│   │       ├── upload/
+│   │       │   └── route.ts (Upload-Endpoint)
+│   │       ├── podcasts/
+│   │       │   └── route.ts (Podcast-API)
+│   │       └── episodes/
+│   │           └── route.ts (Episode-API)
+│   ├── components/
+│   │   ├── Player.tsx
+│   │   ├── PodcastCard.tsx
+│   │   ├── EpisodeList.tsx
+│   │   ├── CategoryFilter.tsx
+│   │   ├── SearchBar.tsx
+│   │   └── UploadForm.tsx
+│   ├── hooks/
+│   │   ├── useAudioPlayer.ts
+│   │   └── usePodcasts.ts
+│   ├── types/
+│   │   └── podcast.ts
+│   ├── lib/
+│   │   ├── storage.ts (Vercel Blob)
+│   │   └── api.ts (API-Helper)
+│   └── styles/
+│       └── globals.css
+```
+
+## DATEN-MODELL
+
+```typescript
+interface Podcast {
+  id: string;
+  title: string;
+  description: string;
+  author: string;
+  category: string[];
+  coverImage: string;
+  episodes: Episode[];
+  publishedAt: string;
+}
+
+interface Episode {
+  id: string;
+  title: string;
+  description: string;
+  audioUrl: string;
+  duration: number; // in Sekunden
+  publishedAt: string;
+  chapterMarkers?: ChapterMarker[];
+}
+
+interface ChapterMarker {
+  title: string;
+  startTime: number; // in Sekunden
+}
+```
+
+## ARBEITSWEISE
+
+### Prioritäten
+1. **MVP**: Homepage + Player + Podcast-Liste + Upload-Funktion
+2. **Erweitert**: Suche, Filter, Kategorien, Vercel Integration
+3. **Premium**: Playlists, Favoriten, Account, Offline-Support
+
+### Code-Qualität
+- **Clean Code**: Lesbar, wartbar, dokumentiert
+- **Kommentare**: Auf Deutsch, wo nötig
+- **Keine Platzhalter**: Echte Daten/Features, keine Dummy-Content
+- **Testing**: Komponenten testbar strukturieren
+- **Erklärungen**: Alle Erklärungen NUR im Chat, keine README/Docs-Dateien
+
+### Assets
+- **Icons**: SVG oder Icon-Library (z.B. Lucide, Heroicons)
+- **Bilder**: Hochwertig, optimiert, WebP-Format
+- **Audio**: In Vercel Blob Storage, nicht im Repository
+
+### Deployment
+- **Vercel**: Automatisches Deployment bei Git-Push
+- **Environment Variables**: Für API-Keys, Storage-Keys
+- **Build-Optimierung**: Next.js optimiert automatisch
+- **CDN**: Vercel CDN für Assets
+
+## VERBOTEN
+
+- ❌ Standard-Emojis im UI/Code
+- ❌ Platzhalter-Content (Lorem Ipsum, Dummy-Daten)
+- ❌ Unnötige Dependencies
+- ❌ Komplexe Folder-Strukturen ohne Grund
+- ❌ Englische UI-Texte (außer technische Begriffe)
+- ❌ Unfertige Features ohne Kennzeichnung
+- ❌ Extra Dokumentationsdateien (README, Docs) - alles im Chat erklären
+- ❌ Audio-Dateien im Git-Repository (nur in Vercel Blob Storage)
+
+## ERLAUBT & EMPFOHLEN
+
+- ✅ Moderne Icon-Sets (SVG)
+- ✅ Echte Podcast-Daten
+- ✅ Progressive Enhancement
+- ✅ Accessibility-Features
+- ✅ Klare, deutsche Kommentare
+- ✅ Schrittweise Entwicklung mit Testmöglichkeiten
+- ✅ Vercel Blob Storage für Media-Files
+- ✅ Next.js API Routes für Backend-Logik
+- ✅ Server Components wo möglich (Performance)
+
+## VERCEL DEPLOYMENT
+
+### Setup
+1. **Vercel Account**: Projekt mit GitHub verbinden
+2. **Environment Variables**: 
+   - `BLOB_READ_WRITE_TOKEN` (für Vercel Blob Storage)
+   - `ADMIN_SECRET` (für Upload-Auth, optional)
+3. **Automatisches Deployment**: Bei jedem Git-Push
+4. **Custom Domain**: Optional einrichten
+
+### Storage-Strategie
+- **Vercel Blob Storage**: Für Audio-Dateien und Cover-Bilder
+- **Vercel KV** (optional): Für Metadaten/JSON-Daten
+- **Alternative**: Supabase oder ähnliche Lösung für Datenbank
+
+### Upload-Flow
+1. User lädt Audio + Cover + Metadaten hoch
+2. API Route validiert und speichert in Blob Storage
+3. Metadaten werden in JSON/DB gespeichert
+4. Podcast erscheint sofort in der Übersicht
+
+## ENTWICKLUNGS-TODO-LISTE (STRUKTURIERT)
+
+### Phase 1: Projekt-Setup & Basis (MVP)
+- [ ] **1.1** Next.js Projekt initialisieren (TypeScript, Tailwind CSS, ESLint)
+- [ ] **1.2** Vercel Deployment konfigurieren (vercel.json, Environment Variables Setup)
+- [ ] **1.3** Basis-Projektstruktur erstellen (App Router, Ordner-Struktur)
+- [ ] **1.4** Globale Styles & Theme-System (Dark/Light Mode Basis)
+- [ ] **1.5** TypeScript Types & Interfaces definieren (Podcast, Episode, etc.)
+- [ ] **1.6** Basis-Layout-Komponente (Header, Footer, Main-Container)
+
+### Phase 2: Design-System & Effekte
+- [ ] **2.1** Design-Token System (Farben, Typografie, Spacing)
+- [ ] **2.2** Dark/Light Mode vollständig implementieren (Toggle, Smooth Transitions)
+- [ ] **2.3** Experimental Navigation implementieren (3D/Floating Nav mit Animationen)
+- [ ] **2.4** Full Screen Header Komponente (Hero-Section mit Video/Animation)
+- [ ] **2.5** Bento Grid System erstellen (Responsive Grid-Layouts)
+- [ ] **2.6** Expressive Typography System (Große, animierte Schriften)
+- [ ] **2.7** Micro Interactions Library (Hover, Click, Scroll Animationen)
+- [ ] **2.8** Scrolling Design (Parallax, Scroll-Animationen mit Lenis/Framer Motion)
+- [ ] **2.9** 3D-Elemente Basis (Three.js oder CSS 3D Transforms)
+- [ ] **2.10** Blending Images & Graphics System (mix-blend-mode, Overlays)
+
+### Phase 3: Core-Komponenten
+- [ ] **3.1** Audio-Player Komponente (Sticky, Floating, mit Waveform)
+- [ ] **3.2** Player: Macro Animations (Play/Pause, Progress, Volume)
+- [ ] **3.3** PodcastCard Komponente (mit Hover-Effekten, 3D-Transforms)
+- [ ] **3.4** EpisodeList Komponente (Scroll-Animationen, Micro Interactions)
+- [ ] **3.5** SearchBar Komponente (Smart Search mit Animationen)
+- [ ] **3.6** CategoryFilter Komponente (Interaktive Filter mit Effekten)
+- [ ] **3.7** Chatbot Komponente (Floating Chatbot mit Animationen)
+- [ ] **3.8** Custom Illustrations System (SVG-Illustrationen integrieren)
+
+### Phase 4: Seiten & Routing
+- [ ] **4.1** Homepage (alle 18 Design-Effekte integrieren)
+- [ ] **4.2** Podcast-Übersicht (Bento Grid, Filter, Suche)
+- [ ] **4.3** Podcast-Detailseite (Full Screen Header, Smart Videos, 3D)
+- [ ] **4.4** Kategorien-Seite (Grid Design, Scrolling Design)
+- [ ] **4.5** Suche-Seite (Expressive Typography, Micro Interactions)
+- [ ] **4.6** Upload-Seite (Anti Design, Experimental Navigation)
+
+### Phase 5: Backend & API
+- [ ] **5.1** Vercel Blob Storage Setup & Konfiguration
+- [ ] **5.2** Upload API Route (Audio, Bilder, Validierung)
+- [ ] **5.3** Podcasts API Route (CRUD Operations)
+- [ ] **5.4** Episodes API Route (CRUD Operations)
+- [ ] **5.5** Metadaten-Speicherung (Vercel KV oder Supabase)
+- [ ] **5.6** Admin-Authentifizierung (Upload-Bereich schützen)
+
+### Phase 6: Upload-Interface
+- [ ] **6.1** UploadForm Komponente (Drag & Drop, Progress, Animationen)
+- [ ] **6.2** Metadaten-Eingabe (Titel, Beschreibung, Kategorie)
+- [ ] **6.3** Cover-Upload mit Preview (Blending Images)
+- [ ] **6.4** Episode-Verwaltung (Hinzufügen, Bearbeiten, Löschen)
+- [ ] **6.5** Upload-Erfolg Animationen (Macro Animations)
+
+### Phase 7: Erweiterte Features
+- [ ] **7.1** Playlist-System (Erstellen, Verwalten, Teilen)
+- [ ] **7.2** Favoriten-System (Speichern, Anzeigen)
+- [ ] **7.3** Hörfortschritt-Tracking (Progress speichern & anzeigen)
+- [ ] **7.4** Social Sharing (Share-Buttons mit Animationen)
+- [ ] **7.5** Abonnements (RSS, Email-Benachrichtigungen)
+
+### Phase 8: Performance & Optimierung
+- [ ] **8.1** Image Optimization (WebP, Lazy Loading)
+- [ ] **8.2** Audio Streaming Optimierung (Chunked Loading)
+- [ ] **8.3** Code Splitting & Lazy Loading
+- [ ] **8.4** Performance Monitoring (Core Web Vitals)
+- [ ] **8.5** SEO Optimierung (Meta-Tags, Structured Data)
+
+### Phase 9: Testing & Deployment
+- [ ] **9.1** Responsive Design Testing (Mobile, Tablet, Desktop)
+- [ ] **9.2** Browser-Kompatibilität (Chrome, Firefox, Safari, Edge)
+- [ ] **9.3** Accessibility Testing (WCAG Compliance)
+- [ ] **9.4** Performance Testing (Lighthouse, PageSpeed)
+- [ ] **9.5** Vercel Deployment (Production Build, Environment Variables)
+- [ ] **9.6** Custom Domain Setup (optional)
+
+### Phase 10: Polish & Finalisierung
+- [ ] **10.1** Alle Design-Effekte auf allen Seiten verfeinern
+- [ ] **10.2** Animation-Timing optimieren (Smooth, nicht zu schnell/langsam)
+- [ ] **10.3** Color Trends aktualisieren (moderne Farbpaletten)
+- [ ] **10.4** Brutalism-Elemente verfeinern (starke Kontraste, klare Linien)
+- [ ] **10.5** Negative Space optimieren (Whitespace-Balance)
+- [ ] **10.6** Finale Bug-Fixes & Optimierungen
+
+## ARBEITSWEISE MIT TODO-LISTE
+
+### Regeln für Entwicklung
+1. **Immer die TODO-Liste abarbeiten** - Schritt für Schritt, keine Sprünge
+2. **Jede Phase abschließen** - Bevor nächste Phase startet, aktuelle Phase testen
+3. **Design-Effekte sofort integrieren** - Nicht am Ende nachträglich einbauen
+4. **Keine Fragen stellen** - TODO-Liste ist der Plan, einfach durcharbeiten
+5. **Nach jeder Komponente testen** - Sicherstellen dass alles funktioniert
+6. **Performance im Blick behalten** - Effekte optimieren, nicht überladen
+
+### Prioritäten
+1. **Phase 1-2**: Basis muss stehen (Setup + Design-System)
+2. **Phase 3-4**: Core-Features müssen funktionieren (Player, Seiten)
+3. **Phase 5-6**: Backend & Upload müssen laufen
+4. **Phase 7-10**: Erweiterte Features & Polish
+
+## DESIGN-RESSOURCEN & LINKS
+
+### Design-Inspiration (Podcast/Media Websites)
+- [Spotify](https://www.spotify.com/) - Clean, modern, viel Whitespace
+- [Apple Podcasts](https://www.apple.com/apple-podcasts/) - Minimalistisch, fokussiert
+- [Anchor](https://www.anchor.fm/) - Modern, benutzerfreundlich
+- [Overcast](https://www.overcast.fm/) - Elegant, funktional
+
+### Design-Inspiration (Allgemein)
+- [Awwwards](https://www.awwwards.com/) - Beste Websites des Jahres
+- [Dribbble](https://dribbble.com/) - Design-Inspiration
+- [Behance](https://www.behance.net/) - Portfolio-Inspiration
+
+### Animation & Effekt-Bibliotheken
+- [Framer Motion](https://www.framer.com/motion/) - React Animation Library
+- [React Spring](https://www.react-spring.dev/) - Physik-basierte Animationen
+- [GSAP](https://gsap.com/) - Powerful Animation Library
+- [Motion One](https://motion.dev/) - Lightweight Animation
+- [Animate.css](https://animate.style/) - Vorgefertigte CSS Animationen
+- [Animista](https://animista.net/) - CSS Animation Generator
+- [Locomotive Scroll](https://locomotive-scroll.vercel.app/) - Smooth Scrolling
+- [Lenis](https://github.com/studio-freight/lenis) - Modern Smooth Scroll
+
+### Icons & Grafiken
+- [Lucide Icons](https://lucide.dev/) - Moderne, clean Icons
+- [Heroicons](https://heroicons.com/) - Tailwind Icons
+- [Tabler Icons](https://tabler.io/icons) - Große Icon-Auswahl
+- [Phosphor Icons](https://phosphoricons.com/) - Moderne Icons
+- [Undraw](https://undraw.co/) - Kostenlose SVG-Illustrationen
+- [Humaaans](https://www.humaaans.com/) - Menschen-Illustrationen
+
+### Farbpaletten & Design-Tools
+- [Coolors](https://coolors.co/) - Farbpaletten-Generator
+- [Realtime Colors](https://realtimecolors.com/) - Live Color Preview
+- [Happy Hues](https://www.happyhues.co/) - Vorgefertigte Paletten
+- [CSS Gradient](https://cssgradient.io/) - CSS Gradient Generator
+- [UI Gradients](https://uigradients.com/) - Vorgefertigte Gradients
+
+### Typografie
+- [Google Fonts](https://fonts.google.com/) - Kostenlose Fonts
+- [Adobe Fonts](https://fonts.adobe.com/) - Premium Fonts
+
+### UI-Komponenten & Code-Beispiele
+- [Shadcn UI](https://ui.shadcn.com/) - Moderne React Komponenten
+- [Magic UI](https://www.magicui.dev/) - Coole Effekte & Komponenten
+- [Aceternity UI](https://ui.aceternity.com/) - Premium Effekte
+- [CSS Tricks](https://css-tricks.com/) - CSS Tutorials & Tricks
+- [CodePen](https://codepen.io/trending) - Live Code-Beispiele
+
+### Audio-Visualisierung
+- [WaveSurfer.js](https://wavesurfer-js.org/) - Waveform Visualisierung
+- [WaveSurfer GitHub](https://github.com/katspaugh/wavesurfer.js) - Audio Waveform Library
+
+### 3D & Parallax
+- [Three.js](https://threejs.org/) - 3D-Effekte
+- [React Spring](https://github.com/drcmda/react-spring) - Parallax & Animationen
+
+### Empfohlene Libraries für dieses Projekt
+- [Framer Motion](https://www.framer.com/motion/) - Für sanfte Animationen
+- [Lucide Icons](https://lucide.dev/) - Für moderne Icons
+- [Shadcn UI](https://ui.shadcn.com/) - Für UI-Komponenten
+- [Lenis](https://github.com/studio-freight/lenis) - Für Smooth Scrolling
+- [Aceternity UI](https://ui.aceternity.com/) - Für Premium-Effekte
+
+## FINALES PROMPT - ZUSAMMENFASSUNG
+
+### Was dieses Projekt ist
+Eine moderne, hochwertige Podcast-Lernplattform mit:
+- **Next.js + TypeScript + Tailwind CSS**
+- **Vercel Deployment** mit automatischem Build
+- **Upload-Funktionalität** für Podcasts (Audio + Cover + Metadaten)
+- **18 Design-Effekte** die auf jeder Seite integriert werden müssen
+- **Strukturierte TODO-Liste** für schrittweise Entwicklung
+
+### Wichtigste Regeln
+1. **Keine Fragen stellen** - TODO-Liste ist der Plan, einfach durcharbeiten
+2. **Design-Effekte sofort integrieren** - Nicht am Ende nachträglich
+3. **Jede Phase abschließen** - Testen bevor nächste Phase startet
+4. **Performance optimieren** - Effekte müssen smooth laufen
+5. **Alles auf Deutsch** - UI, Texte, Kommentare
+6. **Keine Standard-Emojis** - Nur hochwertige Icons/SVG
+7. **Erklärungen nur im Chat** - Keine extra Dokumentationsdateien
+
+### Start der Entwicklung
+Wenn der Benutzer "Start" oder "Los geht's" sagt:
+1. Beginne mit **Phase 1.1** (Next.js Projekt initialisieren)
+2. Arbeite die TODO-Liste Schritt für Schritt ab
+3. Integriere Design-Effekte sofort bei jeder Komponente
+4. Teste nach jeder Komponente
+5. Erkläre im Chat was du machst, aber frage nicht nach Erlaubnis
+
+### Design-Effekte Checkliste (für jede Seite)
+- [ ] Anti Design
+- [ ] Experimental Navigation
+- [ ] Scrolling Design
+- [ ] Macro Animations
+- [ ] Chatbot Design
+- [ ] Smart Videos
+- [ ] Custom Illustrations
+- [ ] Full Screen Headers
+- [ ] Bento Grid
+- [ ] Expressive Typography
+- [ ] Color Trends
+- [ ] Brutalism
+- [ ] Micro Interactions
+- [ ] Negative Space
+- [ ] Grid Design
+- [ ] 3D Websites
+- [ ] Blending Images
+- [ ] Dark/Light Mode
+
+**Homepage muss alle 18 Effekte haben, andere Seiten mindestens 5-8.**

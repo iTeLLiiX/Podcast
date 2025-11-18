@@ -1,0 +1,74 @@
+═══════════════════════════════════════════════════════════════
+  ⚠️ KRITISCH: DIESE DATEIEN FEHLEN AUF GITHUB!
+═══════════════════════════════════════════════════════════════
+
+Netlify findet das "app" Verzeichnis NICHT!
+Das bedeutet: Die Dateien sind noch NICHT auf GitHub hochgeladen.
+
+═══════════════════════════════════════════════════════════════
+  🔴 SOFORT HOCHLADEN (in dieser Reihenfolge):
+═══════════════════════════════════════════════════════════════
+
+1. Gehe zu: https://github.com/iTeLLiiX/Podcast
+
+2. Klicke auf "Add file" → "Upload files"
+
+3. Lade diese Dateien/Ordner hoch:
+
+   ✅ app/ (KOMPLETTES VERZEICHNIS!)
+      → app/layout.tsx
+      → app/page.tsx
+      → app/globals.css
+      → app/podcast/page.tsx
+      → app/podcast/[id]/page.tsx
+      → app/kategorien/page.tsx
+      → app/suche/page.tsx
+      → app/upload/page.tsx
+
+   ✅ package.json
+   ✅ netlify.toml
+   ✅ next.config.js
+   ✅ tsconfig.json
+
+4. Klicke auf "Commit changes"
+
+═══════════════════════════════════════════════════════════════
+  📋 WIE LADE ICH EINEN ORDNER HOCH?
+═══════════════════════════════════════════════════════════════
+
+OPTION 1: Kompletter Ordner (empfohlen)
+1. "Add file" → "Upload files"
+2. Ziehe den "app" Ordner in den Browser
+3. Oder klicke "choose your files" und wähle den Ordner
+
+OPTION 2: Dateien einzeln
+1. Erstelle zuerst den Ordner "app" auf GitHub
+2. Gehe in den "app" Ordner
+3. Lade jede Datei einzeln hoch:
+   - layout.tsx
+   - page.tsx
+   - globals.css
+   - etc.
+
+═══════════════════════════════════════════════════════════════
+  ✅ PRÜFUNG NACH UPLOAD:
+═══════════════════════════════════════════════════════════════
+
+Gehe zu: https://github.com/iTeLLiiX/Podcast
+
+Prüfe ob du siehst:
+□ Ein Ordner namens "app"
+□ Dateien wie "package.json", "netlify.toml"
+
+Wenn "app" fehlt → NOCHMAL HOCHLADEN!
+
+═══════════════════════════════════════════════════════════════
+  ⚠️ WICHTIG:
+═══════════════════════════════════════════════════════════════
+
+- Der "app" Ordner MUSS im ROOT-Verzeichnis sein
+- Alle Dateien müssen drin sein (layout.tsx, page.tsx, etc.)
+- Nach Upload: Netlify sollte automatisch neu deployen
+
+═══════════════════════════════════════════════════════════════
+

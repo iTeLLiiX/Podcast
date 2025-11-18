@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js Runtime (wird automatisch erkannt)
+[build.processing]
+  skip_processing = false
+
+# Next.js Plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Headers für statische Assets
+[[headers]]
+  for = "/audio/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+

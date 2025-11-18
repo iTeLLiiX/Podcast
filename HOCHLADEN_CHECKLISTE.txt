@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════════
+  ⚠️ WICHTIG: DIESE DATEIEN MÜSSEN AUF GITHUB SEIN!
+═══════════════════════════════════════════════════════════════
+
+Netlify findet das "app" Verzeichnis nicht!
+Das bedeutet: Die Dateien sind noch nicht auf GitHub.
+
+═══════════════════════════════════════════════════════════════
+  🔴 KRITISCH - MUSS HOCHGELADEN WERDEN:
+═══════════════════════════════════════════════════════════════
+
+1. ✅ app/ (KOMPLETTES VERZEICHNIS!)
+   → app/layout.tsx
+   → app/page.tsx
+   → app/globals.css
+   → app/podcast/page.tsx
+   → app/podcast/[id]/page.tsx
+   → app/kategorien/page.tsx
+   → app/suche/page.tsx
+   → app/upload/page.tsx
+
+2. ✅ package.json
+3. ✅ netlify.toml
+4. ✅ next.config.js
+5. ✅ tsconfig.json
+
+═══════════════════════════════════════════════════════════════
+  🟡 WICHTIG - SOLLTE AUCH HOCHGELADEN WERDEN:
+═══════════════════════════════════════════════════════════════
+
+6. ✅ components/ (alle .tsx Dateien)
+7. ✅ lib/ (alle .ts und .tsx Dateien)
+8. ✅ types/podcast.ts
+9. ✅ public/audio/Sharp_Episode1.mp3
+10. ✅ tailwind.config.ts
+11. ✅ postcss.config.js
+12. ✅ .eslintrc.json
+13. ✅ .gitignore
+14. ✅ README.md
+15. ✅ .cursorrules
+
+═══════════════════════════════════════════════════════════════
+  ✅ SCHNELL-CHECK:
+═══════════════════════════════════════════════════════════════
+
+Gehe zu: https://github.com/iTeLLiiX/Podcast
+
+Prüfe ob diese Dateien/Ordner vorhanden sind:
+□ app/ (Ordner mit Dateien drin)
+□ package.json
+□ netlify.toml
+
+Wenn EINE davon fehlt → Hochladen!
+
+═══════════════════════════════════════════════════════════════
+
